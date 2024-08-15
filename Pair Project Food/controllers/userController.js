@@ -73,6 +73,51 @@ class UserController {
       res.send(error.message);
     }
   }
+
+  // BUYER CHECKOUT
+  static async buyerCheckout(req, res) {
+    try {
+      res.render("buyerCheckout");
+    } catch (error) {
+      res.send(error.message);
+    }
+  }
+
+  // EDIT SELLER
+  static async editSeller(req, res) {
+    try {
+      res.render("editSeller");
+    } catch (error) {
+      res.send(error.message);
+    }
+  }
+
+  // POST EDIT SELLER
+  static async postEditSeller(req, res) {
+    try {
+      res.redirect("/editSeller");
+    } catch (error) {
+      res.send(error.message);
+    }
+  }
+
+  // USER PROFILE
+  static async userProfile(req, res) {
+    try {
+      res.render("userProfile");
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
+  // EDIT USER PROFILE
+  static async postUserProfile(req, res) {
+    try {
+      res.redirect("/userProfile");
+    } catch (error) {
+      res.send(error.message);
+    }
+  }
 }
 
 module.exports = UserController;

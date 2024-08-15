@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/login", UserController.loginForm);
 router.post("/login", UserController.postLogin);
 
-// get register
+// REGISTER
 router.get("/register", UserController.registerForm);
 router.post("/register", UserController.postRegister);
 
@@ -17,26 +17,22 @@ router.use(function (req, res, next) {
   next();
 });
 
-// MAIN MENU
+// MAIN MENU BUYER, LIST MAKANAN BUY
 router.get("/mainMenu", UserController.mainMenu);
 
-// MAIN MENU Seller
+// MAIN MENU SELLER, LIST MAKANAN UNTUK DI CREATE, UPDATE, DELETE
 router.get("/mainMenuSeller", UserController.mainMenuSeller);
 
-//list order item
+// BUYER CHECKOUT NAMPILIN SEMUA
+router.get("/buyerCheckout", UserController.buyerCheckout);
 
-// router.get("/items", UserController.listItems);
-//post register
-// router.post("/register", UserController.postRegister);
+// EDIT SELLER
+router.get("editSeller", UserController.editSeller);
 
-// // login form
-// router.get("/login", UserController);
+// POST EDIT SELLER
+router.post("editSeller", UserController.postEditSeller);
 
-// // post login
-// router.post("/login", UserController);
-
-// router.get("", Controller.showRegistForm)
-
-// router.post("", Controller.postRegistForm)
+// USER PROFILE
+router.get("/userProfile", UserController.userProfile);
 
 module.exports = router;
