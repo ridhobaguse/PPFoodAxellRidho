@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            color: #333;
+        }
+        .food-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .food-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .food-details {
+            flex: 1;
+        }
+        .food-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .food-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .food-price {
+            font-size: 18px;
+            font-weight: 500;
+            color: #e53935;
+        }
+        .order-button {
+            background-color: #e53935;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .order-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Available Food</h1>
+            <p>Select your meal</p>
+        </div>
+        <ul class="food-list">
+           
+                <li class="food-item">
+                    <div class="food-details">
+                        <div class="food-name">     </div>
+                        <div class="food-description">      </div>
+                        <div class="food-price">        </div>
+                    </div>
+                    <button class="order-button">Order Now</button>
+                </li>
+           
+        </ul>
+    </div>
+</body>
+</html>

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         through: models.OrderItem,
         foreignKey: "ItemId",
       });
-      Item.belongsTo(models.CategoryId, {
+      Item.belongsTo(models.Category, {
         foreignKey: "CategoryId",
       });
     }

@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "name": "Sate Ayam",
+      "description": "Sate Ayam khas Tradisional",
+      "price": 30000,
+      "imgUrl": "https://down-id.img.susercontent.com/file/id-11134207-7r98u-lvzvlyrbbtpq0d",
+      "CategoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Coca-Cola",
+      "description": "Minuman Berkarbonasi",
+      "price": 5000,
+      "imgUrl": "https://down-id.img.susercontent.com/file/fa3de484938141b331e35ae523cd3ab5",
+      "CategoryId": 2
+    }
+  ]
+
+  name: DataTypes.STRING,
+      description: DataTypes.STRING,
+      price: DataTypes.INTEGER,
+      imgUrl: DataTypes.STRING,
+      CategoryId: DataTypes.INTEGER,
