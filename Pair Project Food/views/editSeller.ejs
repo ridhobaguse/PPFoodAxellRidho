@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Item</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: 500;
+        }
+        td {
+            background-color: #fff;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .radio-group input[type="radio"] {
+            margin-right: 5px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .submit-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Create New Food Item</h1>
+        </div>
+        <form action="/editSeller" method="POST">
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Input</th>
+                </tr>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="description">Description:</label></td>
+                    <td><textarea id="description" name="description" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="price">Price:</label></td>
+                    <td><input type="number" id="price" name="price" required></td>
+                </tr>
+                <tr>
+                    <td><label for="imgUrl">Image URL:</label></td>
+                    <td><input type="text" id="imgUrl" name="imgUrl" required></td>
+                </tr>
+                <tr>
+                    <td>Category:</td>
+                    <td>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" id="CategoryId" name="CategoryId" value="1">
+                                Makanan
+                            </label>
+                            <label>
+                                <input type="radio" id="CategoryId" name="CategoryId" value="2">
+                                Minuman
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="button-container">
+                        <button onclick="window.location.href='mainMenuSeller'" type="submit" class="submit-button">Create</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 "use strict";
-const { Model } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const { hashPassword } = require("../helpers/bcrypt");
+const main = require("../services/emailService");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -20,18 +21,44 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init(
+    // VALIDASI
     {
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: "Email cannot be Empty",
+          },
+          notNull: {
+            msg: "Email cannot be Empty",
+          },
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: "Password cannot be Empty",
+          },
+          notNull: {
+            msg: "Password cannot be Empty",
+          },
+        },
+      },
       role: DataTypes.STRING,
     },
     {
       hooks: {
-        beforeCreate(instance, options) {
+        beforeCreate: (instance, options) => {
           const hash = hashPassword(instance.password);
-
           instance.password = hash;
           instance.role = "buyer";
+          //Node Mailer
+        },
+        afterCreate: async (instance, option) => {
+          await main();
         },
       },
       sequelize,

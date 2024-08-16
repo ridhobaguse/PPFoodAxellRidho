@@ -16,9 +16,3 @@
       "CategoryId": 2
     }
   ]
-
-  name: DataTypes.STRING,
-      description: DataTypes.STRING,
-      price: DataTypes.INTEGER,
-      imgUrl: DataTypes.STRING,
-      CategoryId: DataTypes.INTEGER,
